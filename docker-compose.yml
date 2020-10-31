@@ -1,0 +1,116 @@
+version: '3'
+
+networks:
+    laravel:
+
+services:
+    nginx:
+        build:
+            context: .
+            dockerfile: docker/nginx/Dockerfile
+        container_name: laravel-nginx
+        ports:
+            - "${NGINX_PORT:-8081}:80"
+        volumes:
+            - ./:/var/www/html
+        depends_on:
+            - php
+            - mysql
+        networks:
+            - laravel
+
+    mysql:
+        image: mysql:5.7.29
+        container_name: laravel-mysql
+        restart: unless-stopped
+        tty: true
+        ports:
+            - "${DB__PORT:-6604}:3306"
+        environment:
+            MYSQL_DATABASE: "${DB_NAME:-laravel}"
+            MYSQL_USER: "${DB_USER:-developer}"
+            MYSQL_PASSWORD: "${DB_PASS:-secret}"
+            MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASS:-secret}"
+            SERVICE_TAGS: dev
+            SERVICE_NAME: mysql
+        volumes:
+            - "${DB_VOLUME:-~/mysql/}:/var/lib/mysql"
+        networks:
+            - laravel
+
+    php:
+        build:
+            context: .
+            dockerfile: docker/php/Dockerfile
+        container_name: laravel-php
+        volumes:
+            - ./:/var/www/html
+        ports:
+            - "${PHP_PORT:-9000}:9000"
+        networks:
+            - laravel
+
+    composer:
+        build:
+            context: .
+            dockerfile: docker/php/Dockerfile
+        container_name: laravel-composer
+        volumes:
+            - ./:/var/www/html
+        working_dir: /var/www/html
+        depends_on:
+            - php
+        user: laravel
+        networks:
+            - laravel
+        entrypoint: [ 'composer' ]
+
+    npm:
+        image: node:latest
+        container_name: laravel-npm
+        volumes:
+            - ./:/var/www/html
+        working_dir: /var/www/html
+        entrypoint: [ 'npm' ]
+
+    artisan:
+        build:
+            context: .
+            dockerfile: docker/php/Dockerfile
+        container_name: laravel-artisan
+        volumes:
+            - ./:/var/www/html
+        depends_on:
+            - mysql
+        working_dir: /var/www/html
+        user: laravel
+        entrypoint: [ 'php', 'artisan' ]
+        networks:
+            - laravel
+
+    redis:
+        image: redis:alpine
+        container_name: laravel-redis
+        ports:
+            - "${REDIS_PORT:-6379}:6379"
+        networks:
+            - laravel
+
+    elasticsearch:
+        image: elasticsearch:7.3.0
+        container_name: laravel-elasticsearch
+        environment:
+            - node.name=es01
+            - discovery.seed_hosts=es01
+            - cluster.initial_master_nodes=es01
+            - cluster.name=docker-cluster
+            - bootstrap.memory_lock=true
+            - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+        ports:
+            - "${ELASTICSEARCH_PORT:-9200}:9200"
+        networks:
+            - laravel
