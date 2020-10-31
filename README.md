@@ -47,6 +47,7 @@ And these helper containers:
 │   ├── nginx
 │   │   ├── Dockerfile
 │   │   ├── default.conf
+│   │   ├── laravel.conf
 │   │   └── nginx.conf
 │   └── php
 │       ├── Dockerfile
@@ -55,7 +56,7 @@ And these helper containers:
 │       └── www.conf
 └── docker-compose.yml
 
-3 directories, 12 files
+3 directories, 13 files
 ```
 
 ## Usage
