@@ -104,7 +104,8 @@ docker-compose run --rm artisan <COMMAND>
 
 ## Credits
 
-- [DevMoath](https://github.com/devmoath)
+- [Moath](https://github.com/devmoath)
+- [All Contributors](../../contributors)
 
 ## Useful Resources 
 
