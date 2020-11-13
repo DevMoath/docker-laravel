@@ -1,6 +1,7 @@
 # Docker Laravel [![Twitter](https://img.shields.io/twitter/url?style=social&url=https://github.com/DevMoath/docker-laravel)](https://twitter.com/intent/tweet?text=Docker%20Laravel%20@DevMoath%20https://github.com/DevMoath/docker-laravel)
 
 [![Release](https://img.shields.io/github/v/release/devmoath/docker-laravel?style=for-the-badge)](https://github.com/DevMoath/docker-laravel/releases)
+![PHP version](https://img.shields.io/badge/PHP-^7.4-blue?style=for-the-badge)
 [![GitHub issues](https://img.shields.io/github/issues/DevMoath/docker-laravel.svg?style=for-the-badge&logo=appveyor)](https://github.com/DevMoath/docker-laravel/issues)
 [![GitHub stars](https://img.shields.io/github/stars/DevMoath/docker-laravel.svg?style=for-the-badge&logo=appveyor)](https://github.com/DevMoath/docker-laravel/stargazers)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/DevMoath/docker-laravel?style=for-the-badge&logo=appveyor)](https://github.com/DevMoath/docker-laravel/pulls)
