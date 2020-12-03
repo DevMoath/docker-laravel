@@ -2,11 +2,12 @@
 
 [![Release](https://img.shields.io/github/v/release/devmoath/docker-laravel?style=for-the-badge)](https://github.com/DevMoath/docker-laravel/releases)
 ![PHP version](https://img.shields.io/badge/PHP-^7.4-blue?style=for-the-badge)
-[![GitHub issues](https://img.shields.io/github/issues/DevMoath/docker-laravel.svg?style=for-the-badge&logo=appveyor)](https://github.com/DevMoath/docker-laravel/issues)
-[![GitHub stars](https://img.shields.io/github/stars/DevMoath/docker-laravel.svg?style=for-the-badge&logo=appveyor)](https://github.com/DevMoath/docker-laravel/stargazers)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/DevMoath/docker-laravel?style=for-the-badge&logo=appveyor)](https://github.com/DevMoath/docker-laravel/pulls)
+![Composer version](https://img.shields.io/badge/Composer-latest-blue?style=for-the-badge)
+[![GitHub issues](https://img.shields.io/github/issues/DevMoath/docker-laravel.svg?style=for-the-badge)](https://github.com/DevMoath/docker-laravel/issues)
+[![GitHub stars](https://img.shields.io/github/stars/DevMoath/docker-laravel.svg?style=for-the-badge)](https://github.com/DevMoath/docker-laravel/stargazers)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/DevMoath/docker-laravel?style=for-the-badge)](https://github.com/DevMoath/docker-laravel/pulls)
 [![GitHub forks](https://img.shields.io/github/forks/DevMoath/docker-laravel?style=for-the-badge)](https://github.com/DevMoath/docker-laravel/network/members)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge&logo=appveyor)](https://github.com/DevMoath/docker-laravel/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://github.com/DevMoath/docker-laravel/blob/master/LICENSE)
 
 ## Table of Contents
 
