@@ -35,7 +35,7 @@ services:
             SERVICE_NAME: mysql
         entrypoint:
             sh -c "
-            echo 'CREATE DATABASE IF NOT EXISTS ${DB_DATABASE:-laravel}; CREATE DATABASE IF NOT EXISTS ${DB_TESTING_NAME:-laravel_testing}' > /docker-entrypoint-initdb.d/init.sql;
+            echo 'CREATE DATABASE IF NOT EXISTS ${DB_DATABASE:-laravel}; CREATE DATABASE IF NOT EXISTS ${DB_DATABASE_TEST:-laravel_testing}' > /docker-entrypoint-initdb.d/init.sql;
             /usr/local/bin/docker-entrypoint.sh --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
             "
         volumes:

@@ -1,7 +1,6 @@
 # Docker Laravel [![Twitter](https://img.shields.io/twitter/url?style=social&url=https://github.com/DevMoath/docker-laravel)](https://twitter.com/intent/tweet?text=Docker%20Laravel%20@DevMoath%20https://github.com/DevMoath/docker-laravel)
 
-[![Release](https://img.shields.io/github/v/release/devmoath/docker-laravel?style=for-the-badge)](https://github.com/DevMoath/docker-laravel/releases)
-![PHP version](https://img.shields.io/badge/PHP-^7.4-blue?style=for-the-badge)
+![PHP version](https://img.shields.io/badge/PHP-8--fpm-blue?style=for-the-badge)
 ![Composer version](https://img.shields.io/badge/Composer-latest-blue?style=for-the-badge)
 [![GitHub issues](https://img.shields.io/github/issues/DevMoath/docker-laravel.svg?style=for-the-badge)](https://github.com/DevMoath/docker-laravel/issues)
 [![GitHub stars](https://img.shields.io/github/stars/DevMoath/docker-laravel.svg?style=for-the-badge)](https://github.com/DevMoath/docker-laravel/stargazers)
@@ -20,18 +19,19 @@
 
 ## Overview
 
-Dockerfile to containerize your laravel applications, and docker-compose for local development 
+Dockerfile to containerize your laravel applications, and docker-compose for local development
 
 ## docker-compose containers
 
-docker-compose contains these main containers: 
+docker-compose contains these main containers:
+
 * nginx
 * mysql
 * php
 * redis
-* elasticsearch
 
-And these helper containers: 
+And these helper containers:
+
 * composer
 * npm
 * artisan
@@ -40,24 +40,19 @@ And these helper containers:
 
 Before you start, `docker-compose.yml` uses these env variables for ports binding and database info:
 
-| Variable           | Default           |
-|--------------------|-------------------|
-| NGINX_PORT         | 8081              |
-| DB__PORT           | 6604              |
-| DB_NAME            | laravel           |
-| DB_TESTING_NAME    | laravel_testing   |
-| DB_USER            | developer         |
-| DB_PASS            | secret            |
-| DB_ROOT_PASS       | secret            |
-| DB_VOLUME          | ~/mysql/          |
-| PHP_PORT           | 9000              |
-| REDIS_PORT         | 6379              |
-| ELASTICSEARCH_PORT | 9200              |
+| Variable         | Default           |
+|------------------|-------------------|
+| NGINX_PORT       | 8081              |
+| DB_DATABASE      | laravel           |
+| DB_DATABASE_TEST | laravel_testing   |
+| DB_VOLUME        | ~/mysql/          |
+| PHP_PORT         | 9000              |
+| REDIS_PORT       | 6379              |
 
 Feel free to change it as you need then run all containers:
 
 ```shell script
-docker-compose up -d --build
+docker-compose up -d --build site
 ```
 
 And you can run one of the helper containers:
@@ -68,7 +63,7 @@ And you can run one of the helper containers:
 docker-compose run --rm composer <COMMAND>
 ```
 
-* npm 
+* npm
 
 ```shell script
 docker-compose run --rm npm <COMMAND>
@@ -85,7 +80,7 @@ docker-compose run --rm artisan <COMMAND>
 - [Moath](https://github.com/devmoath)
 - [All Contributors](../../contributors)
 
-## Useful Resources 
+## Useful Resources
 
 * [A much better local Laravel dev environment with Docker](https://youtu.be/I980aPL-NRM)
 * [docker-compose-laravel](https://github.com/aschmelyun/docker-compose-laravel)
