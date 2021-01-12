@@ -19,7 +19,7 @@
 
 ## Overview
 
-Dockerfile to containerize your laravel applications, and docker-compose for local development
+docker-compose for local development
 
 ## docker-compose containers
 
