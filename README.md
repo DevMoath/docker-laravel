@@ -49,7 +49,7 @@ Before you start, `docker-compose.yml` uses these env variables for ports bindin
 | PHP_PORT         | 9000              |
 | REDIS_PORT       | 6379              |
 
-Feel free to change it as you need then run all containers:
+Feel free to change it as you need then run site container:
 
 ```shell script
 docker-compose up -d --build site
