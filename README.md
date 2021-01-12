@@ -12,8 +12,7 @@
 ## Table of Contents
 
 - [Overview](#overview)
-- [docker-compose containers](#docker-compose-containers)
-- [Project Structure](#project-structure)
+- [docker-compose Containers](#docker-compose-containers)
 - [Usage](#usage)
 - [Credits](#credits)
 - [Useful Resources](#useful-resources)
@@ -37,46 +36,23 @@ And these helper containers:
 * npm
 * artisan
 
-## Project Structure
-
-```
-.
-├── Dockerfile
-├── LICENSE.md
-├── README.md
-├── docker
-│   ├── entrypoint.sh
-│   ├── nginx
-│   │   ├── Dockerfile
-│   │   ├── default.conf
-│   │   ├── laravel.conf
-│   │   └── nginx.conf
-│   └── php
-│       ├── Dockerfile
-│       ├── artisan-cron
-│       ├── laravel.conf
-│       └── www.conf
-└── docker-compose.yml
-
-3 directories, 13 files
-```
-
 ## Usage
 
 Before you start, `docker-compose.yml` uses these env variables for ports binding and database info:
 
-| Variable           | Default   |
-|--------------------|-----------|
-| NGINX_PORT         | 8081      |
-| DB__PORT           | 6604      |
-| DB_NAME            | laravel   |
-| DB_USER            | developer |
-| DB_PASS            | secret    |
-| DB_ROOT_PASS       | secret    |
-| DB_VOLUME          | ~/mysql/  |
-| PHP_PORT           | 9000      |
-| REDIS_PORT         | 6379      |
-| ELASTICSEARCH_PORT | 9200      |
+| Variable           | Default           |
+|--------------------|-------------------|
+| NGINX_PORT         | 8081              |
+| DB__PORT           | 6604              |
+| DB_NAME            | laravel           |
+| DB_TESTING_NAME    | laravel_testing   |
+| DB_USER            | developer         |
+| DB_PASS            | secret            |
+| DB_ROOT_PASS       | secret            |
+| DB_VOLUME          | ~/mysql/          |
+| PHP_PORT           | 9000              |
+| REDIS_PORT         | 6379              |
+| ELASTICSEARCH_PORT | 9200              |
 
 Feel free to change it as you need then run all containers:
 

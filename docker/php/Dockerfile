@@ -1,4 +1,4 @@
-FROM php:7.4-fpm
+FROM php:8-fpm
 
 # install packages
 RUN apt-get update && apt-get install -y \
@@ -21,15 +21,9 @@ RUN apt-get update && apt-get install -y \
         cron
 
 # install extensions
-RUN docker-php-ext-install bcmath \
-        ctype \
-        json \
-        mbstring \
-        pdo \
-        tokenizer \
-        xml \
+RUN docker-php-ext-install pcntl \
+        bcmath \
         pdo_mysql \
-        pdo_pgsql \
         zip \
         gd \
         gmp
@@ -46,13 +40,8 @@ RUN rm -rf /var/lib/apt/lists/*
 # copy composer file from composer image
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-ADD docker/php/laravel.conf /usr/local/etc/php-fpm.d/www.conf
+ADD docker/php/www.conf /usr/local/etc/php-fpm.d/www.conf
 
-RUN groupadd -g 1000 laravel
-RUN useradd laravel -g laravel
-
-RUN mkdir -p /var/www/html
-
-RUN chown laravel:laravel /var/www/html
+RUN echo "pcre.jit=0" >> /usr/local/etc/php/conf.d/docker-php-ext-pcntl.ini
 
 WORKDIR /var/www/html
