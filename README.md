@@ -46,7 +46,7 @@ Before you start, `docker-compose.yml` uses these env variables for ports bindin
 | DB_DATABASE      | laravel           |
 | DB_DATABASE_TEST | laravel_testing   |
 | DB_VOLUME        | ~/mysql/          |
-| PHP_PORT         | 9000              |
+| PHP_PORT         | 9001              |
 | REDIS_PORT       | 6379              |
 
 Feel free to change it as you need then run site container:
