@@ -82,6 +82,7 @@ docker-compose run --rm artisan <COMMAND>
 
 ## Useful Resources
 
+* [Docker videos playlist](https://www.youtube.com/playlist?list=PLWXM1Hj1xHDZOjLQdz687d8GA8YQ7fpvX)
 * [A much better local Laravel dev environment with Docker](https://youtu.be/I980aPL-NRM)
 * [docker-compose-laravel](https://github.com/aschmelyun/docker-compose-laravel)
 * [Running Scheduled Laravel Tasks with Docker](https://youtu.be/2UTHJpBRGpY)
