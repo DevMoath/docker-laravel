@@ -1,4 +1,4 @@
-FROM php:7.3-fpm
+FROM php:8-fpm
 
 # install packages
 RUN apt-get update && apt-get install -y \

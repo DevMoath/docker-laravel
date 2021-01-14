@@ -1,6 +1,6 @@
 # Docker Compose Laravel [![Twitter](https://img.shields.io/twitter/url?style=social&url=https://github.com/DevMoath/docker-compose-laravel)](https://twitter.com/intent/tweet?text=Docker%20Compose%20Laravel%20@DevMoath%20https://github.com/DevMoath/docker-compose-laravel)
 
-![PHP version](https://img.shields.io/badge/PHP-7.3--fpm-blue?style=for-the-badge)
+![PHP version](https://img.shields.io/badge/PHP-8--fpm-blue?style=for-the-badge)
 ![Composer version](https://img.shields.io/badge/Composer-latest-blue?style=for-the-badge)
 [![GitHub issues](https://img.shields.io/github/issues/DevMoath/docker-compose-laravel.svg?style=for-the-badge)](https://github.com/DevMoath/docker-compose-laravel/issues)
 [![GitHub stars](https://img.shields.io/github/stars/DevMoath/docker-compose-laravel.svg?style=for-the-badge)](https://github.com/DevMoath/docker-compose-laravel/stargazers)
