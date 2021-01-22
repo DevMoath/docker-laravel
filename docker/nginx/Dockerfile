@@ -9,3 +9,6 @@ COPY ./docker/nginx/general.conf /etc/nginx/general.conf
 COPY ./docker/nginx/php_fastcgi.conf /etc/nginx/php_fastcgi.conf
 COPY ./docker/nginx/security.conf /etc/nginx/security.conf
 COPY ./docker/nginx/default.conf /etc/nginx/conf.d/default.conf
+
+# remove default site
+RUN rm /etc/nginx/sites-enabled/default
