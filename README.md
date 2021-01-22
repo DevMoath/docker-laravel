@@ -1,12 +1,19 @@
-# Docker Compose Laravel [![Twitter](https://img.shields.io/twitter/url?style=social&url=https://github.com/DevMoath/docker-compose-laravel)](https://twitter.com/intent/tweet?text=Docker%20Compose%20Laravel%20@DevMoath%20https://github.com/DevMoath/docker-compose-laravel)
+<h1>
+    <p align="center">
+        Docker Compose Laravel
+        <a href="https://twitter.com/intent/tweet?text=Docker%20Compose%20Laravel%20@DevMoath%20https://github.com/DevMoath/docker-compose-laravel"><img src="https://img.shields.io/twitter/url?style=social&amp;url=https://github.com/DevMoath/docker-compose-laravel" alt="Twitter"></a>
+    </p>
+</h1>
 
-![PHP version](https://img.shields.io/badge/PHP-8--fpm-blue?style=for-the-badge)
-![Composer version](https://img.shields.io/badge/Composer-2-blue?style=for-the-badge)
-[![GitHub issues](https://img.shields.io/github/issues/DevMoath/docker-compose-laravel.svg?style=for-the-badge)](https://github.com/DevMoath/docker-compose-laravel/issues)
-[![GitHub stars](https://img.shields.io/github/stars/DevMoath/docker-compose-laravel.svg?style=for-the-badge)](https://github.com/DevMoath/docker-compose-laravel/stargazers)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/DevMoath/docker-compose-laravel?style=for-the-badge)](https://github.com/DevMoath/docker-compose-laravel/pulls)
-[![GitHub forks](https://img.shields.io/github/forks/DevMoath/docker-compose-laravel?style=for-the-badge)](https://github.com/DevMoath/docker-compose-laravel/network/members)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://github.com/DevMoath/docker-compose-laravel/blob/master/LICENSE)
+<p align="center">
+    <img src="https://img.shields.io/badge/PHP-8--fpm-blue?style=for-the-badge" alt="PHP version">
+    <img src="https://img.shields.io/badge/Composer-2-blue?style=for-the-badge" alt="Composer version">
+    <a href="https://github.com/DevMoath/docker-compose-laravel/issues"><img src="https://img.shields.io/github/issues/DevMoath/docker-compose-laravel.svg?style=for-the-badge" alt="GitHub issues"></a>
+    <a href="https://github.com/DevMoath/docker-compose-laravel/stargazers"><img src="https://img.shields.io/github/stars/DevMoath/docker-compose-laravel.svg?style=for-the-badge" alt="GitHub stars"></a>
+    <a href="https://github.com/DevMoath/docker-compose-laravel/pulls"><img src="https://img.shields.io/github/issues-pr-raw/DevMoath/docker-compose-laravel?style=for-the-badge" alt="GitHub pull requests"></a>
+    <a href="https://github.com/DevMoath/docker-compose-laravel/network/members"><img src="https://img.shields.io/github/forks/DevMoath/docker-compose-laravel?style=for-the-badge" alt="GitHub forks"></a>
+    <a href="https://github.com/DevMoath/docker-compose-laravel/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License: MIT"></a>
+</p>
 
 ## Table of Contents
 
