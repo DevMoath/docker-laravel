@@ -31,6 +31,7 @@ RUN docker-php-ext-install pcntl \
 
 ENV PHP_OPCACHE_VALIDATE_TIMESTAMPS="0"
 COPY docker/php/opcache.ini "$PHP_INI_DIR/conf.d/opcache.ini"
+COPY docker/php/php.ini "$PHP_INI_DIR/php.ini"
 
 # install xdebug
 RUN pecl install xdebug
@@ -43,8 +44,5 @@ RUN rm -rf /var/lib/apt/lists/*
 
 # copy composer file from composer image
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
-
-# prevents the webserver from sending back the X-Powered-By header
-RUN echo "expose_php = Off" >> "$PHP_INI_DIR/php.ini"
 
 WORKDIR /var/www/html
