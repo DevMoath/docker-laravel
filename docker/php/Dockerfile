@@ -38,12 +38,6 @@ RUN docker-php-ext-enable xdebug
 RUN rm -rf /var/lib/apt/lists/*
 
 # copy composer file from composer image
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
-# copy php-fpm config
-ADD docker/php/www.conf /usr/local/etc/php-fpm.d/www.conf
-
-# append pcntl config
-RUN echo "pcre.jit=0" >> /usr/local/etc/php/conf.d/docker-php-ext-pcntl.ini
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
