@@ -40,4 +40,7 @@ RUN rm -rf /var/lib/apt/lists/*
 # copy composer file from composer image
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
+# prevents the webserver from sending back the X-Powered-By header
+RUN echo "expose_php = Off" >> /usr/local/etc/php/php.ini
+
 WORKDIR /var/www/html
