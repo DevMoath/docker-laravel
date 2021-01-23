@@ -57,7 +57,7 @@ services:
             - laravel
 
     redis:
-        image: redis:alpine
+        image: redis:6-alpine
         container_name: redis
         ports:
             - "${REDIS_PORT:-6379}:6379"
@@ -82,7 +82,7 @@ services:
             - laravel
 
     npm:
-        image: node:latest
+        image: node:15-alpine
         container_name: npm
         volumes:
             - ./:/var/www/html
