@@ -1,7 +1,7 @@
 FROM php:8-fpm
 
 # install packages
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
         openssl \
         libxml2-dev \
         libpq-dev \
