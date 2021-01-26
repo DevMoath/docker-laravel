@@ -29,7 +29,7 @@ RUN docker-php-ext-install pcntl \
         gmp \
         opcache
 
-ENV PHP_OPCACHE_VALIDATE_TIMESTAMPS="0"
+ENV PHP_OPCACHE_VALIDATE_TIMESTAMPS="1"
 COPY docker/php/opcache.ini "$PHP_INI_DIR/conf.d/opcache.ini"
 COPY docker/php/php.ini "$PHP_INI_DIR/php.ini"
 
