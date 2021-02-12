@@ -1,6 +1,5 @@
 FROM php:8-fpm
 
-# install packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
         openssl \
         libxml2-dev \
@@ -13,36 +12,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         curl \
         git \
         zip \
-        unzip \
-        supervisor \
-        nginx \
-        nodejs \
-        npm \
-        cron
-
-# install extensions
-RUN docker-php-ext-install pcntl \
+        unzip && \
+    docker-php-ext-install pcntl \
         bcmath \
         pdo_mysql \
         zip \
         gd \
         gmp \
-        opcache
+        opcache && \
+    pecl install xdebug && \
+    docker-php-ext-enable xdebug
 
-ENV PHP_OPCACHE_VALIDATE_TIMESTAMPS="1"
-COPY docker/php/opcache.ini "$PHP_INI_DIR/conf.d/opcache.ini"
-COPY docker/php/php.ini "$PHP_INI_DIR/php.ini"
-
-# install xdebug
-RUN pecl install xdebug
-
-# enable it
-RUN docker-php-ext-enable xdebug
-
-# clear cache
-RUN rm -rf /var/lib/apt/lists/*
-
-# copy composer file from composer image
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
-
-WORKDIR /var/www/html
