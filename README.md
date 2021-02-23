@@ -34,49 +34,32 @@ docker-compose contains these main containers:
 * php
 * redis
 
-And these helper containers:
-
-* composer
-* npm
-* artisan
-
 ## Usage
 
 Before you start, `docker-compose.yml` uses these env variables for ports binding and database info:
 
-| Variable         | Default           |
-|------------------|-------------------|
-| NGINX_PORT       | 8081              |
-| DB_DATABASE      | laravel           |
-| DB_DATABASE_TEST | laravel_testing   |
-| DB_VOLUME        | ~/mysql/          |
-| PHP_PORT         | 9001              |
-| REDIS_PORT       | 6379              |
+| Variable         | Default         |
+|------------------|-----------------|
+| NGINX_PORT       | 8081            |
+| DB_DATABASE_TEST | laravel_testing |
+| DB_VOLUME        | ~/mysql/        |
+| PHP_PORT         | 9001            |
+| REDIS_PORT       | 6379            |
 
-Feel free to change it as you need then run site container:
+Feel free to change it as you need then run the containers:
 
 ```shell script
-docker-compose up -d --build site
+docker-compose up -d --build
 ```
 
-And you can run one of the helper containers:
-
-* composer
+You can run `composer`, `artisan`, or `npm` commands like this:
 
 ```shell script
-docker-compose run --rm composer <COMMAND>
-```
+docker-compose exec php composer <COMMAND>
 
-* npm
+docker-compose exec php php artisan <COMMAND>
 
-```shell script
-docker-compose run --rm npm <COMMAND>
-```
-
-* artisan
-
-```shell script
-docker-compose run --rm artisan <COMMAND>
+docker-compose exec php npm <COMMAND>
 ```
 
 ## Useful Resources
