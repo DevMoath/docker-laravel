@@ -71,7 +71,8 @@ services:
         container_name: composer
         volumes:
             - ./:/var/www/html
-            - "~/.config/psysh/psysh_history:/root/.config/psysh/psysh_history"
+            - "$HOME/.config/psysh/psysh_history:/root/.config/psysh/psysh_history"
+            - "$HOME/.composer:/tmp"
         working_dir: /var/www/html
         depends_on:
             - php
