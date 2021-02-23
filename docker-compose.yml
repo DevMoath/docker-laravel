@@ -44,7 +44,7 @@ services:
             /usr/local/bin/docker-entrypoint.sh --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
             "
         volumes:
-            - "${DB_VOLUME:-$HOME/mysql/}:/var/lib/mysql"
+            - "${DB_VOLUME:-~/mysql/}:/var/lib/mysql"
         networks:
             - laravel
 
@@ -55,8 +55,8 @@ services:
         container_name: php
         volumes:
             - ./:/var/www/html
-            - "$HOME/.config/psysh/psysh_history:/root/.config/psysh/psysh_history"
-            - "$HOME/.composer:/tmp"
+            - "~/.config/psysh/psysh_history:/root/.config/psysh/psysh_history"
+            - "~/.composer:/tmp"
         ports:
             - "${PHP_PORT:-9001}:9000"
         networks:
