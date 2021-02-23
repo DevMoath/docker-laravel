@@ -1,6 +1,6 @@
 FROM php:8-fpm
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install --yes --quiet --no-install-recommends \
         openssl \
         libxml2-dev \
         libpq-dev \
@@ -11,6 +11,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libpng-dev \
         curl \
         git \
+        nodejs \
+        npm \
         zip \
         unzip && \
     docker-php-ext-install pcntl \
