@@ -17,7 +17,7 @@
 ## Table of Contents
 
 - [Overview](#overview)
-- [docker-compose Containers](#docker-compose-containers)
+- [Containers](#containers)
 - [Usage](#usage)
 - [Useful Resources](#useful-resources)
 
@@ -25,14 +25,13 @@
 
 docker-compose for local development
 
-## docker-compose containers
-
-docker-compose contains these main containers:
+## Containers
 
 * nginx
 * mysql
 * php
 * redis
+* horizon
 
 ## Usage
 
@@ -41,7 +40,10 @@ Before you start, `docker-compose.yml` uses these env variables for ports bindin
 | Variable         | Default         |
 |------------------|-----------------|
 | NGINX_PORT       | 8081            |
-| DB_DATABASE_TEST | laravel_testing |
+| DB_DATABASE      | `null`          |
+| DB_DATABASE_TEST | `null`          |
+| DB_USERNAME      | `null`          |
+| DB_PASSWORD      | `null`          |
 | DB_VOLUME        | ~/mysql/        |
 | PHP_PORT         | 9001            |
 | REDIS_PORT       | 6379            |
