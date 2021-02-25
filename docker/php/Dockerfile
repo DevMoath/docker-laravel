@@ -11,7 +11,6 @@ RUN apt-get update && apt-get install --yes --quiet --no-install-recommends \
         libmcrypt-dev \
         libgmp-dev \
         libpng-dev \
-        curl \
         git \
         nodejs \
         zip \
