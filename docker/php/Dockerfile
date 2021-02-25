@@ -20,9 +20,11 @@ RUN apt-get update && apt-get install --yes --quiet --no-install-recommends \
         pdo_mysql \
         zip \
         gd \
-        gmp \
-        opcache && \
+        gmp && \
     pecl install xdebug && \
     docker-php-ext-enable xdebug
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+# Use the default development configuration
+RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
