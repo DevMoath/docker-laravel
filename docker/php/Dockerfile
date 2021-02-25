@@ -1,5 +1,7 @@
 FROM php:8-fpm
 
+RUN curl -sL https://deb.nodesource.com/setup_15.x | bash -
+
 RUN apt-get update && apt-get install --yes --quiet --no-install-recommends \
         openssl \
         libxml2-dev \
@@ -12,7 +14,6 @@ RUN apt-get update && apt-get install --yes --quiet --no-install-recommends \
         curl \
         git \
         nodejs \
-        npm \
         zip \
         unzip && \
     docker-php-ext-install pcntl \
