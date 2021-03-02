@@ -1,18 +1,11 @@
-<h1>
-    <p align="center">
-        Docker Compose Laravel
-        <a href="https://twitter.com/intent/tweet?text=Docker%20Compose%20Laravel%20@DevMoath%20https://github.com/DevMoath/docker-compose-laravel"><img src="https://img.shields.io/twitter/url?style=social&amp;url=https://github.com/DevMoath/docker-compose-laravel" alt="Twitter"></a>
-    </p>
-</h1>
+# Docker Compose Laravel
 
-<p align="center">
-    <img src="https://img.shields.io/badge/PHP-8--fpm-blue?style=for-the-badge" alt="PHP version">
-    <img src="https://img.shields.io/badge/Composer-2-blue?style=for-the-badge" alt="Composer version">
-    <img src="https://img.shields.io/badge/node-15--alpine-blue?style=for-the-badge" alt="Node version">
-    <img src="https://img.shields.io/badge/mysql-8-blue?style=for-the-badge" alt="MySQL version">
-    <img src="https://img.shields.io/badge/nginx-1--alpine-blue?style=for-the-badge" alt="Nginx version">
-    <img src="https://img.shields.io/badge/redis-6--alpine-blue?style=for-the-badge" alt="Redis version">
-</p>
+![PHP version](https://img.shields.io/badge/PHP-8--fpm-blue?style=for-the-badge)
+![Composer version](https://img.shields.io/badge/Composer-2-blue?style=for-the-badge)
+![Node version](https://img.shields.io/badge/node-15--alpine-blue?style=for-the-badge)
+![MySQL version](https://img.shields.io/badge/mysql-8-blue?style=for-the-badge)
+![Nginx version](https://img.shields.io/badge/nginx-1--alpine-blue?style=for-the-badge)
+![Redis version](https://img.shields.io/badge/redis-6--alpine-blue?style=for-the-badge)
 
 ## Table of Contents
 
@@ -51,7 +44,7 @@ Before you start, `docker-compose.yml` uses these env variables for ports bindin
 Feel free to change it as you need then run the containers:
 
 ```shell script
-docker-compose up -d --build
+docker-compose up --detach --build
 ```
 
 You can run `composer`, `artisan`, or `npm` commands like this:
@@ -67,7 +60,3 @@ docker-compose exec php npm <COMMAND>
 ## Useful Resources
 
 * [Docker videos playlist](https://www.youtube.com/playlist?list=PLWXM1Hj1xHDZOjLQdz687d8GA8YQ7fpvX)
-* [A much better local Laravel dev environment with Docker](https://youtu.be/I980aPL-NRM)
-* [docker-compose-laravel](https://github.com/aschmelyun/docker-compose-laravel)
-* [Running Scheduled Laravel Tasks with Docker](https://youtu.be/2UTHJpBRGpY)
-* [laravel-scheduled-tasks-docker](https://github.com/aschmelyun/laravel-scheduled-tasks-docker)
