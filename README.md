@@ -1,8 +1,8 @@
 # Docker Compose Laravel
 
-![PHP version](https://img.shields.io/badge/PHP-8--fpm-blue?style=for-the-badge)
+![PHP version](https://img.shields.io/badge/PHP-8--FPM%20%7C%207.4--FPM-blue?style=for-the-badge)
 ![Composer version](https://img.shields.io/badge/Composer-2-blue?style=for-the-badge)
-![Node version](https://img.shields.io/badge/node-15--alpine-blue?style=for-the-badge)
+![Node version](https://img.shields.io/badge/node-15-blue?style=for-the-badge)
 ![MySQL version](https://img.shields.io/badge/mysql-8-blue?style=for-the-badge)
 ![Nginx version](https://img.shields.io/badge/nginx-1--alpine-blue?style=for-the-badge)
 ![Redis version](https://img.shields.io/badge/redis-6--alpine-blue?style=for-the-badge)

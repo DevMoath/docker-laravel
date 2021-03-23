@@ -48,10 +48,8 @@ services:
             - laravel
 
     php:
-        build:
-            context: .
-            dockerfile: docker/php/Dockerfile
-        image: docker-compose-laravel/php:8
+        # image: devmoath/php-74-laravel-dev
+        image: devmoath/php-8-laravel-dev
         container_name: php
         volumes:
             - ./:/var/www/html
@@ -71,7 +69,8 @@ services:
             - laravel
 
     horizon:
-        image: docker-compose-laravel/php:8
+        # image: devmoath/php-74-laravel-dev
+        image: devmoath/php-8-laravel-dev
         container_name: horizon
         working_dir: /var/www/html
         entrypoint: [ 'php', 'artisan', 'horizon' ]
