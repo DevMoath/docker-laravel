@@ -7,13 +7,6 @@
 ![Nginx version](https://img.shields.io/badge/nginx-1--alpine-blue?style=for-the-badge)
 ![Redis version](https://img.shields.io/badge/redis-6--alpine-blue?style=for-the-badge)
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Containers](#containers)
-- [Usage](#usage)
-- [Useful Resources](#useful-resources)
-
 ## Overview
 
 docker-compose for local development
