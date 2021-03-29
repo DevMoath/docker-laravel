@@ -73,7 +73,7 @@ services:
         image: devmoath/php-8-laravel-dev
         container_name: horizon
         working_dir: /var/www/html
-        entrypoint: [ 'php', 'artisan', 'horizon' ]
+        entrypoint: bash -c "while :; do timeout 60s php artisan horizon --ansi; done"
         volumes:
             - ./:/var/www/html
         networks:
