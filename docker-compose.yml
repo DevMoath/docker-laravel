@@ -55,8 +55,6 @@ services:
             - ./:/var/www/html
             - "~/.config/psysh/psysh_history:/root/.config/psysh/psysh_history"
             - "~/.composer:/tmp"
-        ports:
-            - "${PHP_PORT:-9001}:9000"
         networks:
             - laravel
 

@@ -29,7 +29,6 @@ Before you start, `docker-compose.yml` uses these env variables for ports bindin
 | DB_USERNAME      | `null`          |
 | DB_PASSWORD      | `null`          |
 | DB_VOLUME        | ~/mysql/        |
-| PHP_PORT         | 9001            |
 | REDIS_PORT       | 6379            |
 
 Feel free to change it as you need then run the containers:
