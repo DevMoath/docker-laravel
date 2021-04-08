@@ -8,6 +8,7 @@ services:
     site:
         image: nginx:1-alpine
         container_name: nginx
+        restart: unless-stopped
         ports:
             - "${NGINX_PORT:-8081}:80"
         volumes:
@@ -51,6 +52,7 @@ services:
         # image: devmoath/php-74-laravel-dev
         image: devmoath/php-8-laravel-dev
         container_name: php
+        restart: unless-stopped
         volumes:
             - ./:/var/www/html
             - "~/.config/psysh/psysh_history:/root/.config/psysh/psysh_history"
@@ -61,6 +63,7 @@ services:
     redis:
         image: redis:6-alpine
         container_name: redis
+        restart: unless-stopped
         ports:
             - "${REDIS_PORT:-6379}:6379"
         networks:
@@ -70,6 +73,7 @@ services:
         # image: devmoath/php-74-laravel-dev
         image: devmoath/php-8-laravel-dev
         container_name: horizon
+        restart: unless-stopped
         working_dir: /var/www/html
         entrypoint: bash -c "while :; do timeout 60s php artisan horizon --ansi; done"
         volumes:
