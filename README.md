@@ -28,7 +28,7 @@ Before you start, `docker-compose.yml` uses these env variables for ports bindin
 | DB_DATABASE_TEST | `null`          |
 | DB_USERNAME      | `null`          |
 | DB_PASSWORD      | `null`          |
-| DB_VOLUME        | ~/mysql8/        |
+| DB_VOLUME        | ~/.mysql8/        |
 | REDIS_PORT       | 6379            |
 
 Feel free to change it as you need then run the containers:
