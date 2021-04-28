@@ -53,7 +53,8 @@ services:
         volumes:
             - ./:/var/www/html
             - "~/.config/psysh/psysh_history:/root/.config/psysh/psysh_history"
-            - "~/.composer:/tmp"
+            - "~/.composer:${COMPOSER_HOME:-/tmp}"
+            - /tmp/phpstan:/tmp/phpstan
         networks:
             - laravel
 
