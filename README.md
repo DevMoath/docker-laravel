@@ -23,11 +23,10 @@ Before you start, `docker-compose.yml` uses these env variables for ports bindin
 
 | Variable         | Default         |
 |------------------|-----------------|
-| NGINX_PORT       | 8081            |
-| DB_DATABASE      | `null`          |
-| DB_DATABASE_TEST | `null`          |
-| DB_USERNAME      | `null`          |
-| DB_PASSWORD      | `null`          |
+| NGINX_PORT       | 80            |
+| DB_DATABASE      | laravel          |
+| DB_DATABASE_TEST | laravel_test          |
+| DB_PASSWORD      |           |
 | DB_VOLUME        | ~/.mysql8/        |
 | REDIS_PORT       | 6379            |
 
