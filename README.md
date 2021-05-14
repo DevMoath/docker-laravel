@@ -9,6 +9,16 @@
 
 docker-compose for local development
 
+## How to Install
+
+To install `docker-composer.yml` and its config in exists project just run this command.
+
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/DevMoath/docker-compose-laravel/master/install.sh)"
+```
+
+> NOTE: make sure you don't have `docker-composer.yml` file and `docker` directory in your project
+
 ## Containers
 
 * nginx
