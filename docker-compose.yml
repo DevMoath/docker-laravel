@@ -7,7 +7,7 @@ networks:
 services:
     site:
         image: nginx:1-alpine
-        container_name: nginx
+        container_name: laravel-nginx
         restart: unless-stopped
         ports:
             - "${NGINX_PORT:-80}:80"
@@ -26,7 +26,7 @@ services:
 
     mysql:
         image: mysql:8
-        container_name: mysql
+        container_name: laravel-mysql
         restart: unless-stopped
         tty: true
         ports:
@@ -48,7 +48,7 @@ services:
     php:
         # image: devmoath/php-74-laravel-dev
         image: devmoath/php-8-laravel-dev
-        container_name: php
+        container_name: laravel-php
         restart: unless-stopped
         volumes:
             - ./:/var/www/html
@@ -60,7 +60,7 @@ services:
 
     redis:
         image: redis:6-alpine
-        container_name: redis
+        container_name: laravel-redis
         restart: unless-stopped
         ports:
             - "${REDIS_PORT:-6379}:6379"
@@ -70,7 +70,7 @@ services:
     horizon:
         # image: devmoath/php-74-laravel-dev
         image: devmoath/php-8-laravel-dev
-        container_name: horizon
+        container_name: laravel-horizon
         restart: unless-stopped
         working_dir: /var/www/html
         entrypoint: bash -c "while :; do timeout 60s php artisan horizon --ansi; done"
