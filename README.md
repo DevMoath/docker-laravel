@@ -23,6 +23,7 @@ To install `docker-composer.yml` and its config in exists project just run this 
 
 * nginx
 * mysql
+* pgsql (commented by default)
 * php
 * redis
 * horizon
@@ -31,14 +32,17 @@ To install `docker-composer.yml` and its config in exists project just run this 
 
 Before you start, `docker-compose.yml` uses these env variables for ports binding and database info:
 
-| Variable         | Default         |
-|------------------|-----------------|
-| NGINX_PORT       | 80            |
-| DB_DATABASE      | laravel          |
-| DB_DATABASE_TEST | laravel_test          |
-| DB_PASSWORD      |           |
-| DB_VOLUME        | ~/.mysql8/        |
-| REDIS_PORT       | 6379            |
+| Variable              | Default     |
+|-----------------------|-------------|
+| NGINX_PORT            | 80          |
+| FORWARD_MYSQL_DB_PORT | 3306        |
+| DB_PASSWORD           | secret      |
+| DB_DATABASE           | laravel     |
+| MYSQL_DB_VOLUME       | ~/.mysql8/  |
+| FORWARD_PGSQL_DB_PORT | 5432        |
+| PGSQL_DB_VOLUME       | ~/.pgsql13/ |
+| COMPOSER_HOME         | /tmp        |
+| REDIS_PORT            | 6379        |
 
 Feel free to change it as you need then run the containers:
 
