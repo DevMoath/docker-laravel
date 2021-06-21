@@ -1,37 +1,65 @@
-## Welcome to GitHub Pages
+# Docker Compose Laravel
 
-You can use the [editor on GitHub](https://github.com/DevMoath/docker-compose-laravel/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+![PHP version](https://img.shields.io/badge/PHP-8--FPM%20%7C%207.4--FPM-blue?style=for-the-badge)
+![Composer version](https://img.shields.io/badge/Composer-2-blue?style=for-the-badge)
+![Node version](https://img.shields.io/badge/node-15-blue?style=for-the-badge)
+![MySQL version](https://img.shields.io/badge/mysql-8-blue?style=for-the-badge)
+![Nginx version](https://img.shields.io/badge/nginx-1--alpine-blue?style=for-the-badge)
+![Redis version](https://img.shields.io/badge/redis-6--alpine-blue?style=for-the-badge)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+docker-compose for local development
 
-### Markdown
+## How to Install
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+To install `docker-composer.yml` and its config in exists project just run this command.
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```shell
+/usr/local/bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/DevMoath/docker-compose-laravel/master/install.sh)"
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+> NOTE: make sure you don't have `docker-composer.yml` file and `docker` directory in your project
 
-### Jekyll Themes
+## Containers
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/DevMoath/docker-compose-laravel/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+* nginx
+* mysql
+* pgsql (commented by default)
+* php
+* redis
+* horizon (will restart every 60 seconds to read new changes)
 
-### Support or Contact
+## Usage
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Before you start, `docker-compose.yml` uses these env variables for ports binding and database info:
+
+| Variable              | Default     |
+|-----------------------|-------------|
+| NGINX_PORT            | 80          |
+| FORWARD_MYSQL_DB_PORT | 3306        |
+| DB_PASSWORD           | secret      |
+| DB_DATABASE           | laravel     |
+| MYSQL_DB_VOLUME       | ~/.mysql8/  |
+| FORWARD_PGSQL_DB_PORT | 5432        |
+| PGSQL_DB_VOLUME       | ~/.pgsql13/ |
+| COMPOSER_HOME         | /tmp        |
+| REDIS_PORT            | 6379        |
+
+Feel free to change it as you need then run the containers:
+
+```shell script
+docker compose up --detach --build
+```
+
+You can run `composer`, `artisan`, or `npm` commands like this:
+
+```shell script
+docker compose exec php composer <COMMAND>
+
+docker compose exec php php artisan <COMMAND>
+
+docker compose exec php npm <COMMAND>
+```
+
+## Useful Resources
+
+* [Docker videos playlist](https://www.youtube.com/playlist?list=PLWXM1Hj1xHDZOjLQdz687d8GA8YQ7fpvX)
