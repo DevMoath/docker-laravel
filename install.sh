@@ -9,7 +9,7 @@ NEW_LINE="\n"
 RED='\033[0;31m'
 
 if [[ -e docker-compose.yml || -e docker ]]; then
-    print "${NEW_LINE}${RED}it seems you have 'docker-compose.yml' file or 'docker' directory, make sure you delete/rename it${NO_COLOR}${NEW_LINE}"
+    echo "${NEW_LINE}${RED}it seems you have 'docker-compose.yml' file or 'docker' directory, make sure you delete/rename it${NO_COLOR}${NEW_LINE}"
     exit 1
 fi
 
