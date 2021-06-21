@@ -19,7 +19,7 @@ services:
             - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
         depends_on:
             - mysql
-            #- pgsql
+            - pgsql
             - php
             - redis
         networks:
@@ -42,26 +42,25 @@ services:
         networks:
             - laravel
 
-#    pgsql:
-#        image: postgres:13
-#        container_name: laravel-pgsql
-#        restart: unless-stopped
-#        ports:
-#            - '${FORWARD_PGSQL_DB_PORT:-5432}:5432'
-#        environment:
-#            POSTGRES_DB: '${DB_DATABASE}'
-#            POSTGRES_USER: '${DB_USERNAME}'
-#            POSTGRES_PASSWORD: '${DB_PASSWORD:-secret}'
-#        volumes:
-#            - "${PGSQL_DB_VOLUME:-~/.pgsql13/}:/var/lib/postgresql/data"
-#        networks:
-#            - laravel
-#        healthcheck:
-#            test: [ "CMD", "pg_isready", "-q", "-d", "${DB_DATABASE}", "-U", "${DB_USERNAME}" ]
+    pgsql:
+        image: postgres:13
+        container_name: laravel-pgsql
+        restart: unless-stopped
+        ports:
+            - '${FORWARD_PGSQL_DB_PORT:-5432}:5432'
+        environment:
+            POSTGRES_DB: '${DB_DATABASE}'
+            POSTGRES_USER: '${DB_USERNAME}'
+            POSTGRES_PASSWORD: '${DB_PASSWORD:-secret}'
+        volumes:
+            - "${PGSQL_DB_VOLUME:-~/.pgsql13/}:/var/lib/postgresql/data"
+        networks:
+            - laravel
+        healthcheck:
+            test: [ "CMD", "pg_isready", "-q", "-d", "${DB_DATABASE}", "-U", "${DB_USERNAME}" ]
 
     php:
-        # image: devmoath/php-74-laravel-dev
-        image: devmoath/php-8-laravel-dev
+        image: devmoath/php-8-laravel-dev # or devmoath/php-74-laravel-dev
         container_name: laravel-php
         restart: unless-stopped
         volumes:
@@ -82,8 +81,7 @@ services:
             - laravel
 
     horizon:
-        # image: devmoath/php-74-laravel-dev
-        image: devmoath/php-8-laravel-dev
+        image: devmoath/php-8-laravel-dev # or devmoath/php-74-laravel-dev
         container_name: laravel-horizon
         restart: unless-stopped
         working_dir: /var/www/html
