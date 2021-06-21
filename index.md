@@ -46,13 +46,13 @@ Before you start, `docker-compose.yml` uses these env variables for ports bindin
 
 Feel free to change it as you need then run the containers:
 
-```shell script
+```shell
 docker compose up --detach --build
 ```
 
 You can run `composer`, `artisan`, or `npm` commands like this:
 
-```shell script
+```shell
 docker compose exec php composer <COMMAND>
 
 docker compose exec php php artisan <COMMAND>
