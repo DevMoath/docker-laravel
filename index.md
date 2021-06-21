@@ -1,12 +1,5 @@
 # Docker Compose Laravel
 
-![PHP version](https://img.shields.io/badge/PHP-8--FPM%20%7C%207.4--FPM-blue?style=for-the-badge)
-![Composer version](https://img.shields.io/badge/Composer-2-blue?style=for-the-badge)
-![Node version](https://img.shields.io/badge/node-15-blue?style=for-the-badge)
-![MySQL version](https://img.shields.io/badge/mysql-8-blue?style=for-the-badge)
-![Nginx version](https://img.shields.io/badge/nginx-1--alpine-blue?style=for-the-badge)
-![Redis version](https://img.shields.io/badge/redis-6--alpine-blue?style=for-the-badge)
-
 docker-compose for local development
 
 ## How to Install
@@ -14,18 +7,18 @@ docker-compose for local development
 To install `docker-composer.yml` and its config in exists project just run this command.
 
 ```shell
-/usr/local/bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/DevMoath/docker-compose-laravel/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/DevMoath/docker-compose-laravel/master/install.sh)"
 ```
 
 > NOTE: make sure you don't have `docker-composer.yml` file and `docker` directory in your project
 
 ## Containers
 
-* nginx
-* mysql
-* pgsql (commented by default)
-* php
-* redis
+* nginx:1-alpine
+* mysql:8
+* postgres:13
+* php:8-fpm | php:7.4-fpm (includes node-16 and composer 2)
+* redis:6-alpine
 * horizon (will restart every 60 seconds to read new changes)
 
 ## Usage
@@ -50,7 +43,7 @@ Feel free to change it as you need then run the containers:
 docker compose up --detach --build
 ```
 
-You can run `composer`, `artisan`, or `npm` commands like this:
+You can run `composer`, `artisan`, `node`, or `npm` commands like this:
 
 ```shell
 docker compose exec php composer <COMMAND>
@@ -58,8 +51,10 @@ docker compose exec php composer <COMMAND>
 docker compose exec php php artisan <COMMAND>
 
 docker compose exec php npm <COMMAND>
+
+docker compose exec php node <COMMAND>
 ```
 
-## Useful Resources
+## Useful Resources to Learn docker and docker-compose
 
 * [Docker videos playlist](https://www.youtube.com/playlist?list=PLWXM1Hj1xHDZOjLQdz687d8GA8YQ7fpvX)
