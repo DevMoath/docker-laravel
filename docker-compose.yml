@@ -90,3 +90,15 @@ services:
             - ./:/var/www/html
         networks:
             - laravel
+
+    mailhog:
+        image: mailhog/mailhog:latest
+        container_name: mailhog
+        restart: unless-stopped
+        ports:
+            - 1025:1025
+            - 8025:8025
+        volumes:
+            - "${MAILHOG_VOLUME:-~/.mailhog/}:/maildir"
+        networks:
+            - laravel
