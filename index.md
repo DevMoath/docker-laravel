@@ -17,7 +17,7 @@ To install `docker-composer.yml` and its config in exists project just run this 
 * nginx:1-alpine
 * mysql:8
 * postgres:13
-* php:8-fpm | php:7.4-fpm (includes node-16 and composer 2)
+* php:8-fpm or php:7.4-fpm (includes node-16 and composer 2)
 * redis:6-alpine
 * horizon (will restart every 60 seconds to read new changes)
 
