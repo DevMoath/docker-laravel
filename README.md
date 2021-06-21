@@ -26,7 +26,7 @@ To install `docker-composer.yml` and its config in exists project just run this 
 * pgsql (commented by default)
 * php
 * redis
-* horizon
+* horizon (will restart every 60 seconds to read new changes)
 
 ## Usage
 
