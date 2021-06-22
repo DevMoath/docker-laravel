@@ -19,7 +19,7 @@ curl --silent --location --fail https://raw.githubusercontent.com/DevMoath/docke
 * postgres:13
 * php:8-fpm or php:7.4-fpm (includes node-16 and composer 2)
 * redis:6-alpine
-* horizon (will restart every 60 seconds to read new changes)
+* Laravel horizon (will restart every 60 seconds to read new changes)
 * mailhog:latest
 
 ## Usage
@@ -55,6 +55,12 @@ docker compose exec php php artisan <COMMAND>
 docker compose exec php npm <COMMAND>
 
 docker compose exec php node <COMMAND>
+```
+
+and if you want to login to a container you can use this command:
+
+```shell
+docker compose exec <CONTAINER_NAME> bash
 ```
 
 ## Useful Resources to Learn docker and docker-compose
