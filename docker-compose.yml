@@ -79,8 +79,14 @@ services:
         image: redis:6-alpine
         container_name: laravel-redis
         restart: unless-stopped
+        ports:
+            - '${FORWARD_REDIS_PORT:-6379}:6379'
         networks:
             - laravel
+        healthcheck:
+            test: ['CMD', 'redis-cli', 'ping']
+            retries: 3
+            timeout: 5s
 
     horizon:
         image: devmoath/php-8-laravel-dev # or devmoath/php-74-laravel-dev

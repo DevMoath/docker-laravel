@@ -39,6 +39,7 @@ Before you start, `docker-compose.yml` uses these env variables for ports bindin
 | MAILHOG_VOLUME                 | ~/.mailhog/ |
 | FORWARD_MAILHOG_PORT           | 1025        |
 | FORWARD_MAILHOG_DASHBOARD_PORT | 8025        |
+| FORWARD_REDIS_PORT             | 6379        |
 
 Feel free to change it as you need then run the containers:
 
