@@ -41,6 +41,10 @@ services:
             - "${MYSQL_DB_VOLUME:-~/.mysql8/}:/var/lib/mysql"
         networks:
             - laravel
+        healthcheck:
+            test: ['CMD', 'mysqladmin', 'ping', '-p${DB_PASSWORD}']
+            retries: 3
+            timeout: 5s
 
     pgsql:
         image: postgres:13
