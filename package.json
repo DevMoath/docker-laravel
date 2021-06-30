@@ -1,0 +1,27 @@
+{
+    "name": "docker-compose-laravel",
+    "description": "docker-compose for local development",
+    "scripts": {
+        "fixer": "npx prettier --write ."
+    },
+    "devDependencies": {
+        "prettier": "^2.3.2"
+    },
+    "prettier": {
+        "printWidth": 120,
+        "singleQuote": true,
+        "tabWidth": 4,
+        "trailingComma": "es5"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DevMoath/docker-compose-laravel.git"
+    },
+    "keywords": [],
+    "author": "Moath <moath.alhajrii@gmail.com> (https://moath.dev/)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/DevMoath/docker-compose-laravel/issues"
+    },
+    "homepage": "https://github.com/DevMoath/docker-compose-laravel#readme"
+}

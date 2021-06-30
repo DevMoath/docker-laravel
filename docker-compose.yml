@@ -10,7 +10,7 @@ services:
         container_name: laravel-nginx
         restart: unless-stopped
         ports:
-            - "${NGINX_PORT:-80}:80"
+            - '${NGINX_PORT:-80}:80'
         volumes:
             - ./:/var/www/html
             - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
@@ -34,11 +34,11 @@ services:
         ports:
             - '${FORWARD_MYSQL_DB_PORT:-3306}:3306'
         environment:
-            MYSQL_ROOT_HOST: "%"
+            MYSQL_ROOT_HOST: '%'
             MYSQL_ROOT_PASSWORD: '${DB_PASSWORD:-secret}'
             MYSQL_DATABASE: ${DB_DATABASE:-laravel}
         volumes:
-            - "${MYSQL_DB_VOLUME:-~/.mysql8/}:/var/lib/mysql"
+            - '${MYSQL_DB_VOLUME:-~/.mysql8/}:/var/lib/mysql'
         networks:
             - laravel
         healthcheck:
@@ -57,11 +57,11 @@ services:
             POSTGRES_USER: '${DB_USERNAME}'
             POSTGRES_PASSWORD: '${DB_PASSWORD:-secret}'
         volumes:
-            - "${PGSQL_DB_VOLUME:-~/.pgsql13/}:/var/lib/postgresql/data"
+            - '${PGSQL_DB_VOLUME:-~/.pgsql13/}:/var/lib/postgresql/data'
         networks:
             - laravel
         healthcheck:
-            test: [ "CMD", "pg_isready", "-q", "-d", "${DB_DATABASE}", "-U", "${DB_USERNAME}" ]
+            test: ['CMD', 'pg_isready', '-q', '-d', '${DB_DATABASE}', '-U', '${DB_USERNAME}']
 
     php:
         image: devmoath/php-8-laravel-dev # or devmoath/php-74-laravel-dev
@@ -69,8 +69,8 @@ services:
         restart: unless-stopped
         volumes:
             - ./:/var/www/html
-            - "~/.config/psysh/psysh_history:/root/.config/psysh/psysh_history"
-            - "~/.composer:${COMPOSER_HOME:-/tmp}"
+            - '~/.config/psysh/psysh_history:/root/.config/psysh/psysh_history'
+            - '~/.composer:${COMPOSER_HOME:-/tmp}'
             - /tmp/phpstan:/tmp/phpstan
         networks:
             - laravel
@@ -101,6 +101,6 @@ services:
             - '${FORWARD_MAILHOG_PORT:-1025}:1025'
             - '${FORWARD_MAILHOG_DASHBOARD_PORT:-8025}:8025'
         volumes:
-            - "${MAILHOG_VOLUME:-~/.mailhog/}:/maildir"
+            - '${MAILHOG_VOLUME:-~/.mailhog/}:/maildir'
         networks:
             - laravel
