@@ -26,18 +26,19 @@ To install `docker-composer.yml` and its config in exists project just run this 
 
 Before you start, `docker-compose.yml` uses these env variables for ports binding and database info:
 
-| Variable              | Default     |
-|-----------------------|-------------|
-| NGINX_PORT            | 80          |
-| FORWARD_MYSQL_DB_PORT | 3306        |
-| DB_PASSWORD           | secret      |
-| DB_DATABASE           | laravel     |
-| MYSQL_DB_VOLUME       | ~/.mysql8/  |
-| FORWARD_PGSQL_DB_PORT | 5432        |
-| PGSQL_DB_VOLUME       | ~/.pgsql13/ |
-| COMPOSER_HOME         | /tmp        |
-| REDIS_PORT            | 6379        |
-| MAILHOG_VOLUME        | ~/.mailhog/ |
+| Variable                       | Default     |
+|--------------------------------|-------------|
+| NGINX_PORT                     | 80          |
+| FORWARD_MYSQL_DB_PORT          | 3306        |
+| DB_PASSWORD                    | secret      |
+| DB_DATABASE                    | laravel     |
+| MYSQL_DB_VOLUME                | ~/.mysql8/  |
+| FORWARD_PGSQL_DB_PORT          | 5432        |
+| PGSQL_DB_VOLUME                | ~/.pgsql13/ |
+| COMPOSER_HOME                  | /tmp        |
+| MAILHOG_VOLUME                 | ~/.mailhog/ |
+| FORWARD_MAILHOG_PORT           | 1025        |
+| FORWARD_MAILHOG_DASHBOARD_PORT | 8025        |
 
 Feel free to change it as you need then run the containers:
 

@@ -75,8 +75,6 @@ services:
         image: redis:6-alpine
         container_name: laravel-redis
         restart: unless-stopped
-        ports:
-            - "${REDIS_PORT:-6379}:6379"
         networks:
             - laravel
 
@@ -96,8 +94,8 @@ services:
         container_name: mailhog
         restart: unless-stopped
         ports:
-            - 1025:1025
-            - 8025:8025
+            - '${FORWARD_MAILHOG_PORT:-1025}:1025'
+            - '${FORWARD_MAILHOG_DASHBOARD_PORT:-8025}:8025'
         volumes:
             - "${MAILHOG_VOLUME:-~/.mailhog/}:/maildir"
         networks:
