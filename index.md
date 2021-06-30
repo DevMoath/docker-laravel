@@ -14,30 +14,31 @@ curl --silent --location --fail https://raw.githubusercontent.com/DevMoath/docke
 
 ## Containers
 
-* nginx:1-alpine
-* mysql:8
-* postgres:13
-* php:8-fpm or php:7.4-fpm (includes node-16 and composer 2)
-* redis:6-alpine
-* Laravel horizon (will restart every 60 seconds to read new changes)
-* mailhog:latest
+-   nginx:1-alpine
+-   mysql:8
+-   postgres:13
+-   php:8-fpm or php:7.4-fpm (includes node-16 and composer 2)
+-   redis:6-alpine
+-   Laravel horizon (will restart every 60 seconds to read new changes)
+-   mailhog:latest
 
 ## Usage
 
 Before you start, `docker-compose.yml` uses these env variables for ports binding and database info:
 
-| Variable              | Default     |
-|-----------------------|-------------|
-| NGINX_PORT            | 80          |
-| FORWARD_MYSQL_DB_PORT | 3306        |
-| DB_PASSWORD           | secret      |
-| DB_DATABASE           | laravel     |
-| MYSQL_DB_VOLUME       | ~/.mysql8/  |
-| FORWARD_PGSQL_DB_PORT | 5432        |
-| PGSQL_DB_VOLUME       | ~/.pgsql13/ |
-| COMPOSER_HOME         | /tmp        |
-| REDIS_PORT            | 6379        |
-| MAILHOG_VOLUME        | ~/.mailhog/ |
+| Variable                       | Default     |
+| ------------------------------ | ----------- |
+| NGINX_PORT                     | 80          |
+| FORWARD_MYSQL_DB_PORT          | 3306        |
+| DB_PASSWORD                    | secret      |
+| DB_DATABASE                    | laravel     |
+| MYSQL_DB_VOLUME                | ~/.mysql8/  |
+| FORWARD_PGSQL_DB_PORT          | 5432        |
+| PGSQL_DB_VOLUME                | ~/.pgsql13/ |
+| COMPOSER_HOME                  | /tmp        |
+| MAILHOG_VOLUME                 | ~/.mailhog/ |
+| FORWARD_MAILHOG_PORT           | 1025        |
+| FORWARD_MAILHOG_DASHBOARD_PORT | 8025        |
 
 Feel free to change it as you need then run the containers:
 
@@ -65,4 +66,4 @@ docker compose exec <CONTAINER_NAME> bash
 
 ## Useful Resources to Learn docker and docker-compose
 
-* [Docker videos playlist](https://www.youtube.com/playlist?list=PLWXM1Hj1xHDZOjLQdz687d8GA8YQ7fpvX)
+-   [Docker videos playlist](https://www.youtube.com/playlist?list=PLWXM1Hj1xHDZOjLQdz687d8GA8YQ7fpvX)
