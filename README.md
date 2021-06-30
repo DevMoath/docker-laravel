@@ -7,7 +7,7 @@ docker-compose for local development
 To install `docker-composer.yml` and its config in exists project just run this command.
 
 ```shell
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/DevMoath/docker-compose-laravel/master/install.sh)"
+curl --silent --location --fail https://raw.githubusercontent.com/DevMoath/docker-compose-laravel/master/install.sh | bash
 ```
 
 > NOTE: make sure you don't have `docker-composer.yml` file and `docker` directory in your project
@@ -19,7 +19,7 @@ To install `docker-composer.yml` and its config in exists project just run this 
 * postgres:13
 * php:8-fpm or php:7.4-fpm (includes node-16 and composer 2)
 * redis:6-alpine
-* horizon (will restart every 60 seconds to read new changes)
+* Laravel horizon (will restart every 60 seconds to read new changes)
 * mailhog:latest
 
 ## Usage
@@ -56,6 +56,12 @@ docker compose exec php php artisan <COMMAND>
 docker compose exec php npm <COMMAND>
 
 docker compose exec php node <COMMAND>
+```
+
+and if you want to login to a container you can use this command:
+
+```shell
+docker compose exec <CONTAINER_NAME> bash
 ```
 
 ## Useful Resources to Learn docker and docker-compose
