@@ -19,7 +19,6 @@ curl --silent --location --fail https://raw.githubusercontent.com/DevMoath/docke
 -   postgres:13
 -   php:8-fpm or php:7.4-fpm (includes node-16 and composer 2)
 -   redis:6-alpine
--   Laravel horizon (will restart every 60 seconds to read new changes)
 -   mailhog:latest
 
 ## Usage
