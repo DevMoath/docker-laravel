@@ -89,17 +89,6 @@ services:
             retries: 3
             timeout: 5s
 
-    horizon:
-        image: devmoath/php-8-laravel-dev # or devmoath/php-74-laravel-dev
-        container_name: laravel-horizon
-        restart: unless-stopped
-        working_dir: /var/www/html
-        entrypoint: bash -c "while :; do timeout 60s php artisan horizon --ansi; done"
-        volumes:
-            - ./:/var/www/html
-        networks:
-            - laravel
-
     mailhog:
         image: mailhog/mailhog:latest
         container_name: mailhog
